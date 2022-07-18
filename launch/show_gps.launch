@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="show_gps" type="show_gps" name="showGPS" output="screen" />
+  <node name="playbag" pkg="rosbag" type="play"
+      args="$(arg bag_filename)" />
+  <node name="rviz" pkg="rviz" type="rviz" required="true"
+      args="-d $(find show_gps)/config/show_gps.rviz" />
+</launch>

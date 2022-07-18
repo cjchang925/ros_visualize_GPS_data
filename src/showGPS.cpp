@@ -13,7 +13,7 @@ public:
         ros::init(argc, argv, "showGPS");
         ros::NodeHandle n;
         pub = n.advertise<visualization_msgs::Marker>("gps", 1000);
-        sub = n.subscribe("fix", 1000, &Node::gpsCallback, this);
+        sub = n.subscribe("fix_2", 1000, &Node::gpsCallback, this);
         ros::spin();
     }
     ros::Subscriber sub;
@@ -30,9 +30,10 @@ void Node::gpsCallback(const sensor_msgs::NavSatFix::Ptr& data) {
     marker.type = visualization_msgs::Marker::SPHERE;
     marker.pose.position.x = data->latitude * 10000.0 - 247855.0;
     marker.pose.position.y = data->longitude * 10000.0 - 1209970.0;
-    //marker.pose.position.z = data->altitude - 116.048;
-    marker.pose.position.z = 0;
+    marker.pose.position.z = data->altitude - 116.048;
+    //marker.pose.position.z = 0;
     marker.color.a = 1.0;
+    /*
     if (marker_id % 2 == 1) {
         marker.color.r = 0.0;
         marker.color.g = 1.0;
@@ -45,6 +46,10 @@ void Node::gpsCallback(const sensor_msgs::NavSatFix::Ptr& data) {
         marker.color.b = 0.0;
         std::cout << "worse z is " << marker.pose.position.z << "\n";
     }
+    */
+    marker.color.r = 0.0;
+    marker.color.g = 1.0;
+    marker.color.b = 0.0;
     marker.pose.orientation.x = 0.0;
     marker.pose.orientation.y = 0.0;
     marker.pose.orientation.z = 0.0;
