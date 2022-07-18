@@ -11,9 +11,10 @@ Run the commands below to clone and compile the package.
 cd ~/catkin_ws/src
 git clone git@github.com:cjchang925/ros_visualize_GPS_data.git
 cd ..
+source devel/setup.bash
 catkin_make
 roslaunch show_gps show_gps.launch bag_filename:={ABSOLUTE_PATH_TO_YOUR_ROS_BAG}
 ```
 ## Note
 + Please check src/main.cpp to modify the topic name of the GPS data in your bag.
-+ Any PR is welcomed :)
++ Any PR is welcomed : )
