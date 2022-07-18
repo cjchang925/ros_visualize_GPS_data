@@ -6,16 +6,15 @@
 
 
 ## Usage
-Run the commands below to clone and compile the package.
+Run the commands below to clone and compile the package.  
 ```bash
 cd ~/catkin_ws/src
 git clone git@github.com:cjchang925/ros_visualize_GPS_data.git
 cd ..
+source devel/setup.bash
 catkin_make
-cd devel/lib/show_gps
-./show_gps
+roslaunch show_gps show_gps.launch bag_filename:={ABSOLUTE_PATH_TO_YOUR_ROS_BAG}
 ```
-Open RViz and add "Marker"  
-Frame: map  
-Topic: /gps  
-Play bag and see the magic!
+## Note
++ Please check src/main.cpp to modify the topic name of the GPS data in your bag.
++ Any PR is welcomed : )
