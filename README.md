@@ -1,12 +1,12 @@
 # ros_visualize_GPS_data
 
 ## System
-**Ubuntu 18.04 LTS** or later  
-**ROS 1 Melodic** or later
++ **Ubuntu 18.04 LTS** or later  
++ **ROS 1 Melodic** or later
 
 
 ## Usage
-Run the commands below to clone and compile the package.  
++ Run the commands below to clone and compile the package.  
 ```bash
 cd ~/catkin_ws/src
 git clone git@github.com:cjchang925/ros_visualize_GPS_data.git
